@@ -135,7 +135,7 @@ function resetForm() {
 function logout() {
     localStorage.removeItem("token");
     localStorage.removeItem("expiraToken");
-    window.location.href = "login.html";
+    window.location.href = "index.html";
 }
 
 //::::::::::::::::::::::: Verificar sesion :::::::::::::::::::::::
