@@ -18,7 +18,7 @@ function login() {
 
     axios({
         method: 'post',
-        url: 'http://localhost:3000/user/login',
+        url: 'http://cf9e3094d68d.ngrok-free.app/user/login',
         data: {
             user_mail: mail,
             user_password: password

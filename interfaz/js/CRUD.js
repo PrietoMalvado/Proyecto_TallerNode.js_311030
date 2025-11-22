@@ -20,7 +20,7 @@ function init(){
 //::::::::::::::::::::::: Funcion para cargar los empleados :::::::::::::::::::::::
 
 function cargarEmpleados(){
-    axios.get("http://localhost:3000/method")
+    axios.get("http://cf9e3094d68d.ngrok-free.app/method")
         .then(res =>{
             empleados = res.data.message;
             mostrarTabla(empleados);
@@ -75,14 +75,14 @@ function guardarEmpleado() {
     };
 
     if (id) {
-        axios.put(`http://localhost:3000/method/${id}`, data)
+        axios.put(`http://cf9e3094d68d.ngrok-free.app/method/${id}`, data)
             .then(() => {
                 resetForm();
                 cargarEmpleados();
             })
             .catch(err => console.error(err));
     } else {
-        axios.post("http://localhost:3000/method", data)
+        axios.post("http://cf9e3094d68d.ngrok-free.app/method", data)
             .then(() => {
                 resetForm();
                 cargarEmpleados();
@@ -111,7 +111,7 @@ function editar(id) {
 
 function eliminar(id) {
     if (!confirm("¿Estás seguro de eliminar este empleado?")) return;
-    axios.delete(`http://localhost:3000/method/${id}`)
+    axios.delete(`http://cf9e3094d68d.ngrok-free.app/method/${id}`)
         .then(() => cargarEmpleados())
         .catch(err => console.error(err));
 }
