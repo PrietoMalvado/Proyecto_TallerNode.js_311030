@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion de empleados - Taller de Node.js S.A. de C.V.</title>
+    <link rel="icon" type="image/png" href="./assets/logo_ndjs.png">
+    <link rel ="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./js/CRUD.js" defer></script>
+</head>
+
+<body class="p-4">
+    <div class="col-6 offset-3 d-flex justify-content-center">
+        <img src="./assets/logo_ndjs.png" 
+                style="width: 120px; height: auto; " 
+                alt="logo">
+    </div>
+
+    <div class="container">
+
+        <h2 class="d-flex justify-content-center mb-3">Gestion de empleados</h2>
+        
+        <!-- Bton para cerrar sesion -->
+        <div class="d-flex justify-content-end mb-3">
+            <button id="btn-logout" class="btn btn-danger btn-sm">Cerrar sesion</button>
+        </div>
+        <!-- Barra de busqueda -->
+
+        <input type="text" id="buscador" class="form-control mb-3" placeholder="Buscar por nombre...">
+        
+        <!-- Formulario para crear/actualizar empleado-->
+
+        <div class="card p-3 mb-4">
+            <h5 id="form-title">Crear empleado</h5>
+
+            <input type="hidden" id="empleado-id">
+
+        <div class="row">
+            <div class="col">
+                <input class="form-control mb-2" id="nombre" placeholder="Nombre">
+            </div>
+            <div class="col">
+                <input class="form-control mb-2" id="apellidos" placeholder="Apellidos">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <input class="form-control mb-2" id="telefono" placeholder="Telefono">
+            </div>
+            <div class="col">
+                <input class="form-control mb-2" id="correo" placeholder="Correo">
+            </div>
+        </div>
+        <input class="form-control mb-2" id="direccion" placeholder="Direccion">
+        <button id="btn-guardar" class="btn btn-primary mt-2">Guardar</button>
+        <button id="btn-cancelar" class="btn btn-secondary mt-2 d-none">Cancelar</button>
+
+        </div>
+        
+        <!-- tabla de empleados-->
+
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre completo</th>
+                    <th>Telefono</th>
+                    <th>Correo</th>
+                    <th>Direccion</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="tabla-empleados">
+                <!-- los empleados se cargan aqui-->
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
